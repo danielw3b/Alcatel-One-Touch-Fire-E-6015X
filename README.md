@@ -38,7 +38,12 @@ If you want a compression option that behaves identically to `.imgc` (skipping b
 
 ```bash
 xz -vk -9 firmware.img
+
 ---
+
+
+
+
 #### 🚀 How to Clone and Setup This Repository
 
 Because this repository links directly to the official upstream EDL project, clone this repository along with its submodules by running:
@@ -46,6 +51,7 @@ Because this repository links directly to the official upstream EDL project, clo
 ```bash
 git clone --recursive [https://github.com/danielw3b/Alcatel-One-Touch-Fire-E-6015X.git](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git)
 cd Alcatel-One-Touch-Fire-E-6015X
+
 ---
 #💻 Environment Setup (ARM64 Chromebook / Debian Linux)
 Standard EDL setups assume an x86_64 architecture. To compile the necessary binary hooks for an ARM64 processor (like those found in many modern Chromebooks), you must install system build tools manually before python packages can compile successfully.
