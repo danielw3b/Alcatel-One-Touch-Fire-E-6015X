@@ -258,3 +258,21 @@ Progress: |██████████| 100.0% Write (Sector 0x748000 of 0x74
 Wrote firmware.img to sector 0.
 ```
 
+### 🤖 AI-Assisted Development
+This unbricking methodology and documentation were co-developed with Gemini, leveraging automated partition analysis to tailor a Qualcomm Emergency Download (EDL) recovery workflow specifically optimized for ARM64 Chromebook Linux (Crostini) environments. By cross-referencing raw sector maps with open-source flashing tools, this approach establishes a reproducible pipeline for restoring legacy mobile hardware without requiring native Windows systems.
+
+
+### ⚠️ Forcing QDL Mode From an Active Fastboot Loop
+
+If your device is currently accessible via Fastboot (`fastboot devices`) but refuses to lock into Qualcomm Diagnostics/QDL mode, you can manually force a hardware fallback by erasing the secondary bootloaders. This strips away the broken software boot chain and forces the phone's primary internal ROM to drop straight into QDL mode upon restart.
+
+Run the following commands in sequence while the phone is in Fastboot mode:
+
+```bash
+fastboot erase boot
+fastboot erase aboot
+fastboot erase sbl1
+fastboot reboot
+
+
+When a Qualcomm device is stuck bouncing between states, intentionally destroying the corrupted or incompatible software bootloaders via Fastboot is the ultimate way to trigger a "hard fallback." By erasing sbl1 (Secondary Bootloader) and aboot (Applications Bootloader/Fastboot itself), the phone has absolutely no instructions to execute upon restarting. The hard-coded Primary Bootloader (PBL) inside the CPU detects this total vacuum and immediately forces the phone into QDL (Emergency Download 9008) mode.
