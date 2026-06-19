@@ -7,7 +7,8 @@ Crucially, this document provides the exact workaround instructions required to 
 ## 🛠️ Repository Components & Dependencies
 * **Target Loader:** `MSM8610.mbn` (Included in the root of this repo).
 * **Upstream EDL Tool:** Powered by [Bkerler's EDL Tool](https://github.com/bkerler/edl).
-* **Full Disk Factory Image (~820MB Compressed / 3.6GB Raw `.img`):** [👉 [https://drive.google.com/file/d/1Sk7TzT1cnt5ahuoYGpkpCab_rqu2HTB6/view?usp=drive_link] 👈]
+* **Full Disk Factory Image (~820MB Compressed / 3.6GB Raw `.img`):
+* **[👉 [https://drive.google.com/file/d/1Sk7TzT1cnt5ahuoYGpkpCab_rqu2HTB6/view?usp=drive_link] 👈]
 
 ---
 
