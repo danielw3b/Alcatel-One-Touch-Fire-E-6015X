@@ -36,8 +36,8 @@ Because `.imgc` is a proprietary container format, you must compile an unpacker 
 #### Path B: The Universal Alternative — Switching to `.xz` (Recommended)
 If you want a compression option that behaves identically to `.imgc` (skipping block zeroes flawlessly) but is natively multi-platform, you can compress your raw file directly on your Chromebook terminal using `xz`:
 
-```bash
-xz -vk -9 firmware.img
+   ```bash
+   xz -vk -9 firmware.img
 
 ---
 
