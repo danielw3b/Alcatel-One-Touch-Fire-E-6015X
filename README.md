@@ -38,9 +38,8 @@ If you want a compression option that behaves identically to `.imgc` (skipping b
 
 ```bash
 xz -vk -9 firmware.img
-  
 
-## 🚀 How to Clone and Setup This Repository
+**#### 🚀 How to Clone and Setup This Repository**
 
 Because this repository links directly to the official upstream EDL project, clone this repository along with its submodules by running:
 
