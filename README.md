@@ -63,23 +63,20 @@ Standard EDL setups assume an x86_64 architecture. To compile the necessary bina
 
 1. Install System Dependencies
 Update your Linux container and install the necessary compiler frameworks:
-
    ```bash
    sudo apt update
    sudo apt install python3-pip python3-venv git build-essential cmake libusb-1.0-0-dev -y
-```
+   ```
 2. Create and Activate an Isolated Virtual Environment
    ```bash
    python3 -m venv qdl_env
    source qdl_env/bin/activate
-```
-
+   ```
 3. Install Python Requirements
 Because pre-compiled wheels for keystone-engine do not exist for ARM64 Linux on PyPI, your Chromebook will use cmake to manually build the internal C++ bindings from source during this step. This step will take 5 to 10 minutes to complete. Do not interrupt it.
-
    ```bash
    pip3 install -r edl/requirements.txt
-```
+   ```
 
 #### 🔌 Hardware Hookup Sequence (Bypassing Boot Loops)
 If your device's partition table is completely corrupt, it will dynamically bounce between Fastboot mode and Qualcomm Emergency Download mode, making it difficult for the container to grasp the USB interface. Use this precise physical sequence to latch it reliably:
