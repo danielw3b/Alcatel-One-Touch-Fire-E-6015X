@@ -29,8 +29,7 @@ Because `.imgc` is a proprietary container format, you must compile an unpacker 
    sudo cp unimgc /usr/local/bin/
 
    unimgc -v firmware.imgc firmware.img
-
----
+   
 #### Path B: The Universal Alternative — Switching to `.xz` (Recommended)
 If you want a compression option that behaves identically to `.imgc` (skipping block zeroes flawlessly) but is natively multi-platform, you can compress your raw file directly on your Chromebook terminal using `xz`:
 
@@ -38,8 +37,8 @@ If you want a compression option that behaves identically to `.imgc` (skipping b
    xz -vk -9 firmware.img
 
 
----
-### 💾 Decompressing the Firmware Image (.img.xz)
+
+#### 💾 Decompressing the Firmware Image (.img.xz)
 
 The factory-original 3.6 GB full-disk layout has been compressed using `xz` to keep the distribution size compact while preserving raw structure.
 
@@ -51,7 +50,7 @@ Decompress it instantly using the built-in system utility:
 
 
 
-# 🚀 How to Clone and Setup This Repository
+#### 🚀 How to Clone and Setup This Repository
 
 Because this repository links directly to the official upstream EDL project, clone this repository along with its submodules by running:
 
