@@ -35,7 +35,7 @@ If you want a compression option that behaves identically to `.imgc` (skipping b
 
    ```bash
    xz -vk -9 firmware.img
-
+```
 #### 💾 Decompressing the Firmware Image (.img.xz)
 
 The factory-original 3.6 GB full-disk layout has been compressed using `xz` to keep the distribution size compact while preserving raw structure.
@@ -56,7 +56,7 @@ Because this repository links directly to the official upstream EDL project, clo
    git clone --recursive [https://github.com/danielw3b/Alcatel-One-Touch-Fire-E-6015X.git](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git)
    cd Alcatel-One-Touch-Fire-E-6015X
 
----
+```
 
 #💻 Environment Setup (ARM64 Chromebook / Debian Linux)
 Standard EDL setups assume an x86_64 architecture. To compile the necessary binary hooks for an ARM64 processor (like those found in many modern Chromebooks), you must install system build tools manually before python packages can compile successfully.
@@ -67,7 +67,7 @@ Update your Linux container and install the necessary compiler frameworks:
    ```bash
    sudo apt update
    sudo apt install python3-pip python3-venv git build-essential cmake libusb-1.0-0-dev -y
-
+```
 2. Create and Activate an Isolated Virtual Environment
    ```bash
    python3 -m venv qdl_env
@@ -78,7 +78,7 @@ Because pre-compiled wheels for keystone-engine do not exist for ARM64 Linux on 
 
    ```bash
    pip3 install -r edl/requirements.txt
-
+```
 #🔌 Hardware Hookup Sequence (Bypassing Boot Loops)
 If your device's partition table is completely corrupt, it will dynamically bounce between Fastboot mode and Qualcomm Emergency Download mode, making it difficult for the container to grasp the USB interface. Use this precise physical sequence to latch it reliably:
 
@@ -97,7 +97,7 @@ To verify the phone successfully locked into standard QDL mode, open your termin
    Look for a device listed with a Qualcomm endpoint, usually matching or resembling:
 
    ID 05c6:9026 Qualcomm Qualcomm CDMA Technologies MSM
-
+```
 #⚡ Flashing Command
 Decompress your downloaded image back into a raw 3.6GB file named firmware.img and place it in your workspace directory.
 
@@ -105,7 +105,7 @@ Because ChromeOS heavily restricts unprivileged user-space access to raw USB com
 
    ```bash
    sudo ~/YOUR_REPO_NAME/qdl_env/bin/python3 edl/edl.py wf firmware.img --loader=MSM8610.mbn --memory=emmc
-
+```
 Expected Output & Behavior Notes:
 Payload Size Warning: You will see an output stating firehose - [LIB]: Host's payload to target size is too large. This is completely normal behavior. The script is acknowledging that the Alcatel 6015X's older RAM buffer size requires smaller data chunks and will automatically downscale the packet transfer window to match.
 
@@ -256,5 +256,5 @@ Progress: |██████████| 100.0% Write (Sector 0x747F60 of 0x74
 Progress: |██████████| 100.0% Write (Sector 0x747FC0 of 0x748000, ) 5.81 MB/s                          
 Progress: |██████████| 100.0% Write (Sector 0x748000 of 0x748000, ) 5.52 MB/s                          
 Wrote firmware.img to sector 0.
-
+```
 
