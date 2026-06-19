@@ -58,7 +58,7 @@ Because this repository links directly to the official upstream EDL project, clo
 
 ```
 
-####💻 Environment Setup (ARM64 Chromebook / Debian Linux)
+#### 💻 Environment Setup (ARM64 Chromebook / Debian Linux)
 Standard EDL setups assume an x86_64 architecture. To compile the necessary binary hooks for an ARM64 processor (like those found in many modern Chromebooks), you must install system build tools manually before python packages can compile successfully.
 
 1. Install System Dependencies
@@ -79,7 +79,7 @@ Because pre-compiled wheels for keystone-engine do not exist for ARM64 Linux on 
    ```bash
    pip3 install -r edl/requirements.txt
 ```
-####🔌 Hardware Hookup Sequence (Bypassing Boot Loops)
+#### 🔌 Hardware Hookup Sequence (Bypassing Boot Loops)
 If your device's partition table is completely corrupt, it will dynamically bounce between Fastboot mode and Qualcomm Emergency Download mode, making it difficult for the container to grasp the USB interface. Use this precise physical sequence to latch it reliably:
 
 Disconnect the phone completely from your Chromebook.
@@ -98,7 +98,7 @@ To verify the phone successfully locked into standard QDL mode, open your termin
 
    ID 05c6:9026 Qualcomm Qualcomm CDMA Technologies MSM
 ```
-####⚡ Flashing Command
+#### ⚡ Flashing Command
 Decompress your downloaded image back into a raw 3.6GB file named firmware.img and place it in your workspace directory.
 
 Because ChromeOS heavily restricts unprivileged user-space access to raw USB communication buses, you must point directly to your virtual environment's Python binary inside a root execution (sudo) wrapper:
@@ -114,7 +114,7 @@ Progress: The script will map physical partition 0, sector 0, and reconstruct al
 Once the terminal prints Wrote firmware.img to sector 0 and returns to your prompt, safely unplug the phone USB cable and hold the Power Button down for 15 seconds to force the Qualcomm processor out of EDL mode and trigger a normal boot up sequence!
 
 
-####Example output of installation and flashing:
+#### Example output of installation and flashing:
 ```bash
 #(qdl_env) dan@penguin:~/6015X$ ~/qdl_env/bin/pip3 install -r edl/requirements.txt
 Collecting wheel
