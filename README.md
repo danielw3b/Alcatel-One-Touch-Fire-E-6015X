@@ -36,8 +36,6 @@ If you want a compression option that behaves identically to `.imgc` (skipping b
    ```bash
    xz -vk -9 firmware.img
 
-
-
 #### 💾 Decompressing the Firmware Image (.img.xz)
 
 The factory-original 3.6 GB full-disk layout has been compressed using `xz` to keep the distribution size compact while preserving raw structure.
@@ -47,7 +45,7 @@ Decompress it instantly using the built-in system utility:
    ```bash
    xz -dk firmware.img.xz
 
-
+```
 
 
 #### 🚀 How to Clone and Setup This Repository
