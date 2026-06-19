@@ -273,6 +273,6 @@ fastboot erase boot
 fastboot erase aboot
 fastboot erase sbl1
 fastboot reboot
-
+```
 
 When a Qualcomm device is stuck bouncing between states, intentionally destroying the corrupted or incompatible software bootloaders via Fastboot is the ultimate way to trigger a "hard fallback." By erasing sbl1 (Secondary Bootloader) and aboot (Applications Bootloader/Fastboot itself), the phone has absolutely no instructions to execute upon restarting. The hard-coded Primary Bootloader (PBL) inside the CPU detects this total vacuum and immediately forces the phone into QDL (Emergency Download 9008) mode.
